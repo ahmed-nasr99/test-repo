@@ -52,4 +52,9 @@ class Cart
     {
         return $this->calculateVats() - $this->calculateSubTotalPrice();
     }
+
+    public function removeProduct($removedindex)
+    {
+       unset($this->products [$removedindex]);
+    }
 }
