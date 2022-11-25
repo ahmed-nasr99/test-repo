@@ -27,4 +27,13 @@ class ExampleTest extends TestCase
         $this->assertEquals(3, $result);
         $this->assertGreaterThanOrEqual(5, $result);
     }
+
+
+    public function testSumTwoNumbersFunction2()
+    {
+        $result = $this->sumTwoNumbers(1,2);
+
+        $this->assertEquals(3, $result);
+        $this->assertGreaterThanOrEqual(5, $result);
+    }
 }
