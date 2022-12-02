@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,3 +69,12 @@ Route::group([
     Route::get('/archived', [ PostController::class , 'archived']);
 });
 
+// Route::group([
+//     'middleware' => 'auth:web',
+
+// ],function(){
+// });
+
+Route::get('products/archived' ,[ProductController::class , 'archive'])->name('products.archived')->middleware('auth:web');
+Route::get('products/{id}/restore' ,[ProductController::class , 'restore'])->name('products.restore')->middleware('auth:web');
+Route::resource('products' , ProductController::class)->middleware('auth:web');
